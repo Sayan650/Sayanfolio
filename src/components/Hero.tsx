@@ -97,17 +97,17 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-start overflow-hidden bg-hero-gradient"
+      className="relative min-h-[100vh] flex items-center justify-start overflow-hidden bg-hero-gradient"
     >
       {/* Background Image Overlay with Parallax Effect */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{
           backgroundImage: `url(${Picture1})`,
-          transform: `translateY(${scrollY * 0.3}px)`,
-          backgroundSize: "120%",
+          transform: `translateY(${scrollY * 0.6}px)`,
+          backgroundSize: "cover",
           marginTop: "-50px",
-          height: "calc(100% + 100px)",
+          height: "calc(100% + 200px)",
         }}
       />
 
