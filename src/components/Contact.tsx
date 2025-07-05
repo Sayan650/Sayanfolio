@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
 import {
   Mail,
   Phone,
@@ -16,11 +17,62 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+
+    if (!formspreeEndpoint) {
+      console.error("Formspree endpoint URL is not defined in .env.local");
+      toast({
+        title: "Configuration Error",
+        description: "The form is not configured correctly.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const result = await response.json();
+        const errorMessage = result.errors
+          ? result.errors.map((err: { message: string }) => err.message).join(", ")
+          : "There was a problem with your request.";
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: errorMessage,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Uh oh! Something went wrong.",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -49,7 +101,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Location",
       value: "Durgapur, India",
-      href: "#",
+      href: "https://maps.app.goo.gl/EVRVLk2eaB79rnsU8",
     },
   ];
 
@@ -168,11 +220,17 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="button-primary w-full justify-center"
+              disabled={isSubmitting}
+              className="button-primary w-full flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {/* <Send className="w-5 h-5 mr-2" /> */}
-              Send Message
-              {/* <span>Send Message</span> */}
+              {isSubmitting ? (
+                "Sending..."
+              ) : (
+                <>
+                  <Send className="w-5 h-5 mr-2" />
+                  Send Message
+                </>
+              )}
             </button>
           </form>
         </div>
