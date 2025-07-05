@@ -9,9 +9,9 @@ const Projects = () => {
       description:
         "A no-code, AI-driven platform that streamlines Starknet onboarding for both end users and developers, reducing initial setup friction by automating contract scaffolding and deployment.",
       tech: ["Next.Js", "Node.js", "PostgreSQL", "Cairo"],
-      image: "/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png",
-      github: "#",
-      live: "#",
+      image: "/devxstark.png",
+      github: "https://github.com/Sayan650/DevXStark.git",
+      live: "https://devfolio.co/projects/devxstark-9421",
       featured: true,
       hackathonWinner: true,
       hackathonName: "EthIndia",
@@ -23,8 +23,8 @@ const Projects = () => {
         "A collaborative online whiteboarding platform (like Miro) using Next.js and TypeScript, delivering server-side rendering (SSR) and static-site generation (SSG) for fast initial loads.",
       tech: ["Vue.js", "Express", "Socket.io", "MongoDB"],
       image: "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Sayan650/boardlify.git",
+      live: "https://github.com/Sayan650/boardlify.git",
       featured: false,
     },
     {
@@ -34,8 +34,8 @@ const Projects = () => {
         "Build Vercel like website that can import git repo and host it on internet for us in 1 click. Used AWS, Redis to host websites.Has 3 parts upload service for uploading the code to S3, deployment service to convert the react code to HTML/CSS and request service to access the hosted website.",
       tech: ["Next.js", "OpenAI API", "Tailwind", "Prisma"],
       image: "/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Sayan650/vercel.git",
+      live: "https://github.com/Sayan650/vercel.git",
       featured: false,
     },
     {
@@ -45,8 +45,8 @@ const Projects = () => {
         " •WebRTC + Socket.io based project which connects users realtime through a voice or video call or through realtime chat. • Used WebRTC for video and voice streaming. • Also have screen sharing feature on video call.",
       tech: ["Vue.js", "Express", "Socket.io", "MongoDB"],
       image: "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Sayan650/Voice-chat-frontend.git",
+      live: "https://github.com/Sayan650/Voice-chat-frontend.git",
       featured: false,
     },
     {
@@ -56,8 +56,8 @@ const Projects = () => {
         "A version control system in web3.The code is saved in distributed storage IPFS",
       tech: ["React.js", "Express", "Socket.io", "MongoDB"],
       image: "/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png",
-      github: "#",
-      live: "#",
+      github: "https://github.com/Sayan650/DRepo_TDoC.git",
+      live: "https://github.com/Sayan650/DRepo_TDoC.git",
       featured: false,
     },
   ];
@@ -134,12 +134,12 @@ const Projects = () => {
                   >
                     <Github className="w-5 h-5" />
                   </a>
-                  <a
+                  {/* <a
                     href={project.live}
                     className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-portfolio-orange transition-colors"
                   >
                     <ExternalLink className="w-5 h-5" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -183,7 +183,7 @@ const Projects = () => {
       </div>
 
       <div className="text-center mt-16 fadeIn stagger-4">
-        <button className="button-secondary">View All Projects</button>
+        <a href="https://github.com/Sayan650" className="button-secondary">View All Projects</a>
       </div>
     </section>
   );

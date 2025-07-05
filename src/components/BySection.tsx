@@ -6,7 +6,7 @@ export default function BySection() {
           <div className="text-[2.5rem] md:text-[4rem] font-black leading-none tracking-tight text-gray-300">
             <span className="block">BY.</span>
             <span className="block font-black">
-              SAYAN<sup className="text-3xl align-super">®</sup>
+              SAYAN<sup className="text-3xl align-super"></sup>
             </span>
             <span className="block">STUDIO</span>
           </div>

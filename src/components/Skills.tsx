@@ -267,17 +267,18 @@ const Skills = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="button-primary group flex">
+              
+              <a href="https://creator-hub-pilot.vercel.app/" className="button-primary group flex items-center">
                 <Eye className="w-5 h-5 mr-2" />
                 Preview Project
                 <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
-              <button className="button-secondary group flex">
+              <a href="https://github.com/Sayan650/creator-hub-pilot.git" className="button-secondary group flex items-center">
                 <Github className="w-5 h-5 mr-2" />
                 View Code
                 <ExternalLink className="w-4 h-4 ml-2 transform group-hover:scale-110 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -301,14 +302,16 @@ const Skills = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="button-primary group flex items-center">
+              <a href="https://github.com/Sayan650" className="button-primary group flex items-center">
                 Let's Collaborate
                 <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
-              <button className="button-secondary flex items-center">
+              <a href="https://github.com/Sayan650" className="button-secondary flex items-center">
                 View My Work
-              </button>
+                <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+
             </div>
 
             <div className="mt-8 flex justify-center space-x-8 text-portfolio-gray-400">
