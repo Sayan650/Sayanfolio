@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import BySection from "@/components/BySection";
 import Services from "@/components/Services";
+import Interactive3DViewer from "@/components/Intaractive3DViwer";
+import UIUXWorks from "@/components/UIUXWorks";
 
 const Index = () => {
   // Initialize intersection observer for animations
@@ -42,7 +44,9 @@ const Index = () => {
         <About />
         <Services />
         {/* <CTA /> */}
+        {/* <Interactive3DViewer simple={true} showColorPicker={false} /> */}
         <Projects />
+        <UIUXWorks />
         <Skills />
         <Contact />
       </main>

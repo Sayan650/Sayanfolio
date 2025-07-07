@@ -55,7 +55,9 @@ const Contact = () => {
       } else {
         const result = await response.json();
         const errorMessage = result.errors
-          ? result.errors.map((err: { message: string }) => err.message).join(", ")
+          ? result.errors
+              .map((err: { message: string }) => err.message)
+              .join(", ")
           : "There was a problem with your request.";
         toast({
           title: "Uh oh! Something went wrong.",
@@ -119,7 +121,7 @@ const Contact = () => {
     <section id="contact" className="section-container">
       <div className="fadeIn mb-16 text-left">
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-portfolio-orange/10 border border-portfolio-orange/20 mb-6">
-          <span className="text-portfolio-orange font-medium">05</span>
+          <span className="text-portfolio-orange font-medium">06</span>
           <span className="text-portfolio-gray-300 ml-2">Get In Touch</span>
         </div>
 

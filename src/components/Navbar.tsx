@@ -53,10 +53,11 @@ const Navbar = () => {
 
   const menuItems = [
     { id: "01", label: "ABOUT", section: "about" },
-    { id: "02", label: "PROJECTS", section: "projects" },
-    { id: "03", label: "SERVICES", section: "services" },
-    { id: "04", label: "SKILLS", section: "skills" },
-    { id: "05", label: "CONTACT", section: "contact" },
+    { id: "02", label: "SERVICES", section: "services" },
+    { id: "03", label: "PROJECTS", section: "projects" },
+    { id: "04", label: "DESIGN WORKS", section: "uiux-works" },
+    { id: "05", label: "SKILLS", section: "skills" },
+    { id: "06", label: "CONTACT", section: "contact" },
   ];
 
   const socialLinks = [
@@ -102,7 +103,7 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 font-bold">
             <button
               onClick={() => scrollToSection("about")}
               className="nav-link"
